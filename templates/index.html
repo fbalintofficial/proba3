@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Üdvözöljük Fitness Cili Foglalási Rendszerében!</h1>
+    <p class="lead">Egyszerűen foglaljon időpontot nálunk,és edz Cilivel! :D</p>
+    <hr class="my-4">
+    <p>Válasszon az elérhető időpontok közül, és foglaljon egy helyet.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('idopontok') }}" role="button">Időpontok megtekintése</a>
+</div>
+{% endblock %}

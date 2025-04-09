@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+        <h2 class="mb-4">Köszönjük a foglalását!</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ foglalas.nev }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    {{ foglalas.idopont.nap.strftime('%Y-%m-%d') }} 
+                    {{ foglalas.idopont.kezdes.strftime('%H:%M') }}-{{ foglalas.idopont.vegzes.strftime('%H:%M') }}
+                </h6>
+                {% if foglalas.email %}
+                    <p class="card-text">Email: {{ foglalas.email }}</p>
+                {% endif %}
+                {% if foglalas.telefon %}
+                    <p class="card-text">Telefon: {{ foglalas.telefon }}</p>
+                {% endif %}
+                <p class="card-text text-muted">
+                    Foglalás ideje: {{ foglalas.letrehozva.strftime('%Y-%m-%d %H:%M') }}
+                </p>
+            </div>
+        </div>
+        
+        <a href="{{ url_for('index') }}" class="btn btn-primary mt-4">Vissza a főoldalra</a>
+    </div>
+</div>
+{% endblock %}
